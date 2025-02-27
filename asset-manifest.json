@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/edsonbjrsensedia/front-analise-dash/static/css/main.9a993262.css",
-    "main.js": "/edsonbjrsensedia/front-analise-dash/static/js/main.02bac9f3.js",
-    "static/js/453.b0cae8f1.chunk.js": "/edsonbjrsensedia/front-analise-dash/static/js/453.b0cae8f1.chunk.js",
-    "index.html": "/edsonbjrsensedia/front-analise-dash/index.html",
-    "main.9a993262.css.map": "/edsonbjrsensedia/front-analise-dash/static/css/main.9a993262.css.map",
-    "main.02bac9f3.js.map": "/edsonbjrsensedia/front-analise-dash/static/js/main.02bac9f3.js.map",
-    "453.b0cae8f1.chunk.js.map": "/edsonbjrsensedia/front-analise-dash/static/js/453.b0cae8f1.chunk.js.map"
+    "main.css": "/front-analise-dash/static/css/main.9a993262.css",
+    "main.js": "/front-analise-dash/static/js/main.a64abbf9.js",
+    "static/js/453.b0cae8f1.chunk.js": "/front-analise-dash/static/js/453.b0cae8f1.chunk.js",
+    "index.html": "/front-analise-dash/index.html",
+    "main.9a993262.css.map": "/front-analise-dash/static/css/main.9a993262.css.map",
+    "main.a64abbf9.js.map": "/front-analise-dash/static/js/main.a64abbf9.js.map",
+    "453.b0cae8f1.chunk.js.map": "/front-analise-dash/static/js/453.b0cae8f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9a993262.css",
-    "static/js/main.02bac9f3.js"
+    "static/js/main.a64abbf9.js"
   ]
 }
