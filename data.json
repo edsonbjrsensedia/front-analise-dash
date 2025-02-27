@@ -1,0 +1,533 @@
+{
+    "planTest": [
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_sweeping-accounts-limits_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "POST recurring-payments with amount equals to 450.00 - Expects 422 LIMITE_VALOR_TRANSACAO_CONSENTIMENTO_EXCEDIDO",
+                        "POST recurring-payments with amount equals to 300.00 - Expects 201",
+                        "Validate Self link",
+                        "Polling sequence [1]",
+                        "POST recurring-payments with amount equals to 300.00 - Expects 422 LIMITE_PERIODO_VALOR_EXCEDIDO",
+                        "Polling sequence [1]",
+                        "POST recurring-payments with amount equals to 100.00 - Expects 201",
+                        "Validate Self link",
+                        "Polling sequence [1]",
+                        "POST recurring-payments with amount equals to 50.00 - Expects 422 LIMITE_PERIODO_QUANTIDADE_EXCEDIDO",
+                        "Polling sequence [1]"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=Edjps6264rCdE5x",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE POST recurring-payments with amount equals to 450.00 - Expects 422 LIMITE_VALOR_TRANSACAO_CONSENTIMENTO_EXCEDIDO: Could not find error with expected code in the errors JSON array"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=0Dw9VfPncLoTun7",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Polling sequence [1]: EnsurePaymentStatusWasRjct: Payment status is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasLimiteValorTransacaoConsentimentoExcedido: Rejection reason returned in the response does not match the expected rejection reason",
+                                "FAILURE Polling sequence [1]: EnsurePaymentStatusWasRjct: Payment status is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsurePaymentRejectionReasonCodeWasLimitePeriodoValorExcedido: Payment rejection code is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsurePaymentStatusWasRjct: Payment status is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsurePaymentRejectionReasonCodeWasLimitePeriodoQuantidadeExcedido: Payment rejection code is not what was expected"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_expirationDateTime_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Checking the created consent - Expecting CONSUMED status",
+                        "Validate Consent Self link",
+                        "Call pix/payments endpoint",
+                        "Validate response",
+                        "Refreshing Access Token expecting 400"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=Y4DCWPxhvnIPkLU",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate GET Consent Response: GetRecurringConsentOASValidatorV2: The field recurringConfiguration is expected to have exactly one valid schema"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=hDyTLTQwodR7Ik9",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: PostRecurringConsentOASValidatorV2: The field recurringConfiguration is expected to have exactly one valid schema",
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: GetRecurringConsentOASValidatorV2: The field recurringConfiguration is expected to have exactly one valid schema",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: GetRecurringConsentOASValidatorV2: The field recurringConfiguration is expected to have exactly one valid schema",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE FAPI1-BASE-6.2.1-11  Call pix/payments endpoint: OptionallyAllow401or422: endpoint returned an unexpected http status - either 401 or 422 accepted"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_invalid-scope_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil conse",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Call pix/payments endpoint",
+                        "Validate response"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=1goXuF42xJvxpK3",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE OIDCC-3.2.2.5  JARM-4.4-2  Verify authorization endpoint response: CheckStateInAuthorizationResponse: State was passed in request, but is missing from response (or returned in the wrong place)"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=SJYBuykbe03tkLL",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE OIDCC-3.2.2.5  JARM-4.4-2  Verify authorization endpoint response: CheckStateInAuthorizationResponse: State was passed in request, but is missing from response (or returned in the wrong place)"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=4U0SvafQ3RKli35",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE OIDCC-3.2.2.5  JARM-4.4-2  Verify authorization endpoint response: CheckStateInAuthorizationResponse: State was passed in request, but is missing from response (or returned in the wrong place)"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_startDateTime_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Call pix/payments endpoint",
+                        "Validate response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=QkE6AbHOdjirDFy",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate response: PostRecurringPaymentPixOASValidatorV2: Unable to find element errors on the PostRecurringPaymentPixOASValidatorV2 API response",
+                                "FAILURE Validate response: EnsureErrorResponseCodeFieldWasPagamentoDivergenteConsentimento: Unable to find element errors on the EnsureErrorResponseCodeFieldWasPagamentoDivergenteConsentimento API response"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_revoked-consent_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Call PATCH consents - Expects 200",
+                        "Validate Consent Self link",
+                        "Checking the created consent - Expecting REVOKED status",
+                        "Validate Consent Self link",
+                        "Call pix/payments endpoint",
+                        "Validate response",
+                        "Refreshing Access Token expecting 400"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=IReoBWrFlfezm07",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE FAPI1-BASE-6.2.1-11  Call pix/payments endpoint: OptionallyAllow401or422: endpoint returned an unexpected http status - either 401 or 422 accepted"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=GxNx6dNJ3oV1P0n",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE FAPI1-BASE-6.2.1-11  Call pix/payments endpoint: OptionallyAllow401or422: endpoint returned an unexpected http status - either 401 or 422 accepted"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=m6DUwFlwUDBnR0M",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE FAPI1-BASE-6.2.1-11  Call pix/payments endpoint: OptionallyAllow401or422: endpoint returned an unexpected http status - either 401 or 422 accepted"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_rejected-consent_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call PATCH consents - Expects 200",
+                        "Validate Consent Self link",
+                        "Checking the created consent - Expecting REJECTED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Validate rejection fields",
+                        "Make request to authorization endpoint"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=a0EspotjDRxEvPy",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=PXNRFZh64Q0EqWJ",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=rLGFT5IvoavFguH",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate consents response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response",
+                                "FAILURE Validate GET Consent Response: ValidateVersionHeader2d0d0: Could not find 'x-v' header in the response"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_negative-consents_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "POST consents without the recurringConfiguration.sweeping field - Expects 422 PARAMETRO_NAO_INFORMADO or 400",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "POST consents with the startDateTime as D+10 and expirationDateTime as D+5 - Expects 422 PARAMETRO_INVALIDO",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "POST consents without the x-fapi-interaction-id - Expects 400",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "POST consents with the x-fapi-interaction-id as '123456' - Expects 400",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Make request to authorization endpoint"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=M2SCglkXnM3CHlf",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate Consent Self link: EnsureConsentResponseCodeWas422: Failed to obtain expected status",
+                                "FAILURE Validate Consent Self link: EnsureErrorResponseCodeFieldWasParametroInvalido: Unable to find element errors on the EnsureErrorResponseCodeFieldWasParametroInvalido API response",
+                                "FAILURE Use client_credentials grant to obtain Brazil consent: EnsureConsentResponseCodeWas400: Failed to obtain expected status"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-pix-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_automatic-pix-consent-edition-restrictive_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call PATCH consents - Expects 200",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate PATCH consent response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Call pix/payments endpoint",
+                        "Validate Self link",
+                        "Validate response",
+                        "Polling sequence [1]"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=xyKvHobHAXC5JNA",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Polling sequence [1]: EnsurePaymentStatusWasRjct: Payment status is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasLimiteValorTransacaoConsentimentoExcedido: Unable to find element data.rejectionReason.code in the response payload"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=vR4gOYYMk29Qpkv",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Call PATCH consents - Expects 200: EnsureConsentResponseCodeWas200: Failed to obtain expected status",
+                                "FAILURE Validate PATCH consent response: EnsureRecurringConsentFieldsAreAsInPatchRequest: The field maximumVariableAmount has not been updated after consent edition",
+                                "FAILURE Validate PATCH consent response: EnsureUpdatedAtDateTimeFieldWasUpdated: The current value for updatedAtDateTime should be equal or in the future in relation to the instant before the call to the API",
+                                "FAILURE Polling sequence [1]: EnsurePaymentStatusWasRjct: Payment status is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasLimiteValorTransacaoConsentimentoExcedido: Unable to find element data.rejectionReason.code in the response payload"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=WanlLTIYxKFWhKE",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Call PATCH consents - Expects 200: EnsureConsentResponseCodeWas200: Failed to obtain expected status",
+                                "FAILURE Validate PATCH consent response: EnsureRecurringConsentFieldsAreAsInPatchRequest: The field maximumVariableAmount has not been updated after consent edition",
+                                "FAILURE Validate PATCH consent response: EnsureUpdatedAtDateTimeFieldWasUpdated: The current value for updatedAtDateTime should be equal or in the future in relation to the instant before the call to the API",
+                                "FAILURE Polling sequence [1]: EnsurePaymentStatusWasRjct: Payment status is not what was expected",
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasLimiteValorTransacaoConsentimentoExcedido: Unable to find element data.rejectionReason.code in the response payload"
+                            ]
+                        }       
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-pix-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_automatic-pix-wrong-creditor_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Call pix/payments endpoint",
+                        "Validate Self link",
+                        "Validate response",
+                        "Polling sequence [1]",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=6sr4UC9Nb7HeSXv",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Polling sequence [1]: GetRecurringPaymentPixOASValidatorV2: Value from element code does not match any given enumeration on the GetRecurringPaymentPixOASValidatorV2 API response",
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasTitularidadeInconsistente: Rejection reason returned in the response does not match the expected rejection reason"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=75dU6eLscLf7AwU",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasTitularidadeInconsistente: Rejection reason returned in the response does not match the expected rejection reason"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=1cT7f16cvzMXwht",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Polling sequence [1]: GetRecurringPaymentPixOASValidatorV2: Value from element code does not match any given enumeration on the GetRecurringPaymentPixOASValidatorV2 API response",
+                                "FAILURE Polling sequence [1]: EnsureRecurringPaymentRejectionReasonCodeWasTitularidadeInconsistente: Rejection reason returned in the response does not match the expected rejection reason"
+                            ]
+                        }       
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "automatic-pix-payments_test-plan_v2",
+            "planModules": [
+                {
+                    "name": "automatic-payments_api_automatic-pix-firstPayment-invalid-creditor_test-module_v2",
+                    "validations": [
+                        "Validating Well-Known URI",
+                        "Validating Authorisation Server has supported Endpoint",
+                        "Use client_credentials grant to obtain Brazil consent",
+                        "Validate Consent Self link",
+                        "Validate consents response",
+                        "Checking the created consent - Expecting AWAITING_AUTHORISATION status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Make request to authorization endpoint",
+                        "Verify authorization endpoint response",
+                        "Checking the created consent - Expecting AUTHORISED status",
+                        "Validate Consent Self link",
+                        "Validate GET Consent Response",
+                        "Call token endpoint",
+                        "Verify token endpoint response",
+                        "Verify at_hash in the authorization endpoint id_token",
+                        "Call pix/payments endpoint",
+                        "Validate response",
+                        "Checking the created consent - Expecting REJECTED status",
+                        "Validate Consent Self link"
+                    ],
+                    "execucoes": [
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=0c5InpBb8X2ymoE",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate response: PostRecurringPaymentPixOASValidatorV2: Value from element code does not match any given enumeration on the PostRecurringPaymentPixOASValidatorV2 API response",
+                                "FAILURE Validate response: EnsureErrorResponseCodeFieldWasPagamentoDivergenteConsentimento: Could not find error with expected code in the errors JSON array"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=T6NkhTs5c0NfzMn",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate response: EnsureErrorResponseCodeFieldWasPagamentoDivergenteConsentimento: Could not find error with expected code in the errors JSON array"
+                            ]
+                        },
+                        {
+                            "log": "https://web.conformance.directory.openbankingbrasil.org.br/log-detail.html?log=T50169rEW6lSH2d",
+                            "status": "Failure",
+                            "summary": [
+                                "FAILURE Validate response: EnsureErrorResponseCodeFieldWasPagamentoDivergenteConsentimento: Could not find error with expected code in the errors JSON array"
+                            ]
+                        }       
+                    ]
+                }
+            ]
+        }
+    ]
+}
