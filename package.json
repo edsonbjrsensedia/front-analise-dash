@@ -2,7 +2,7 @@
   "name": "my-dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/edsonbjrsensedia/front-analise-dash.git",
+  "homepage": "https://github.com/edsonbjrsensedia/front-analise-dash",
   "dependencies": {
     "@shadcn/ui": "^0.0.4",
     "@tailwindcss/postcss": "^4.0.9",
